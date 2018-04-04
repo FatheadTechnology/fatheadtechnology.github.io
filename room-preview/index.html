@@ -45,6 +45,9 @@
 <body>
 
 <div id="fixed">
+
+        <input type="range" min="25" max="1000" value="50" class="slider" id="imageRepeatSize"><br>
+
     <input type='file' id="uploadBannerImage" onchange="readURL(this);" />
 </div>
 <div id="image">
@@ -94,5 +97,11 @@
     $(".joint").change(function(){
         readURL(this);
     });
+
+        $('#imageRepeatSize').change(function(){
+     var imageSize=document.getElementById('imageRepeatSize').value;
+     $('#preview').css('background-size', imageSize +'px');
+
+     });
 
 </script>
