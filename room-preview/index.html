@@ -34,14 +34,16 @@
         right: 10px;
         bottom: 10px;
         z-index: 10000;
-        background-color: #801300;
+        background-color: #383838;
         color: white;
         text-align: center;
-        border-radius: 5%;
+        border-radius: 1%;
         padding: 5px;
+        font-family: Helvetica, sans-serif;
     }
 
     #preview {
+        background-image: url('./eye_balls.png');
         background-size: 250px;
         background-repeat: repeat;
     }
@@ -49,6 +51,8 @@
 <body>
 
 <div id="fixed">
+    <input type='file' id="uploadBannerImage" onchange="readURL(this);"/>
+git
     <h1 id="currentValue">250px</h1>
     <select id="selector">
         <option value="216">3"x3"</option>
@@ -61,7 +65,6 @@
     <br>
     <input type="range" min="25" max="1000" value="50" class="slider" id="imageRepeatSize"><br>
 
-    <input type='file' id="uploadBannerImage" onchange="readURL(this);"/>
 </div>
 <div id="image">
     <img src="./53_rb_young_boy_playroom_generic_all.png" alt="" style="z-index: 2;">
