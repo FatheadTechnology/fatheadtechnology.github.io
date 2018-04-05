@@ -36,8 +36,12 @@
         z-index: 10000;
         background-color: #801300;
         color: white;
+        text-align: center;
+        border-radius: 5%;
+        padding: 5px;
     }
-    #preview{
+
+    #preview {
         background-size: 250px;
         background-repeat: repeat;
     }
@@ -45,6 +49,7 @@
 <body>
 
 <div id="fixed">
+    <h1 id="currentValue">250px</h1>
     <select id="selector">
         <option value="216">3"x3"</option>
         <option value="288">4"x4"</option>
@@ -54,9 +59,9 @@
         <option value="1728">24"x24"</option>
     </select>
     <br>
-        <input type="range" min="25" max="1000" value="50" class="slider" id="imageRepeatSize"><br>
+    <input type="range" min="25" max="1000" value="50" class="slider" id="imageRepeatSize"><br>
 
-    <input type='file' id="uploadBannerImage" onchange="readURL(this);" />
+    <input type='file' id="uploadBannerImage" onchange="readURL(this);"/>
 </div>
 <div id="image">
     <img src="./53_rb_young_boy_playroom_generic_all.png" alt="" style="z-index: 2;">
@@ -102,20 +107,29 @@
         }
     }
 
-    $(".joint").change(function(){
+    $(".joint").change(function () {
         readURL(this);
     });
 
-    $('#selector').change(function(){
-        var imageSize=document.getElementById('selector').value;
-        $('#preview').css('background-size', imageSize +'px');
-
+    $('#selector').change(function () {
+        var imageSize = document.getElementById('selector').value;
+        $('#preview').css('background-size', imageSize + 'px');
+        var styleProps = $("#preview").css("background-size");
+        $("#currentValue").text(styleProps);
     });
 
-        $('#imageRepeatSize').change(function(){
-     var imageSize=document.getElementById('imageRepeatSize').value;
-     $('#preview').css('background-size', imageSize +'px');
 
-     });
+    $('#preview').change(function () {
+        var styleProps = $("#preview").css("background-size");
+        $("#currentValue").text(styleProps + "px");
+    });
+
+    $('#imageRepeatSize').change(function () {
+        var imageSize = document.getElementById('imageRepeatSize').value;
+        $('#preview').css('background-size', imageSize + 'px');
+        var styleProps = $("#preview").css("background-size");
+        $("#currentValue").text(styleProps);
+
+    });
 
 </script>
