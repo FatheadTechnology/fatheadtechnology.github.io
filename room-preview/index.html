@@ -53,17 +53,21 @@
 <div id="fixed">
     <input type='file' id="uploadBannerImage" onchange="readURL(this);"/>
 
+<!--
     <h1 id="currentValue">250px</h1>
+-->
     <select id="selector">
-        <option value="216">3"x3"</option>
-        <option value="288">4"x4"</option>
-        <option value="432">6"x6"</option>
-        <option value="576">8"x8"</option>
-        <option value="864">12"x12"</option>
-        <option value="1728">24"x24"</option>
+        <option value="31.5">3"x3"</option>
+        <option value="41.5">4"x4"</option>
+        <option value="63">6"x6"</option>
+        <option value="83">8"x8"</option>
+        <option value="125">12"x12"</option>
+        <option value="250">24"x24"</option>
     </select>
     <br>
+<!--
     <input type="range" min="25" max="1000" value="50" class="slider" id="imageRepeatSize"><br>
+-->
 
 </div>
 <div id="image">
@@ -117,22 +121,22 @@
     $('#selector').change(function () {
         var imageSize = document.getElementById('selector').value;
         $('#preview').css('background-size', imageSize + 'px');
-        var styleProps = $("#preview").css("background-size");
-        $("#currentValue").text(styleProps);
+  /*      var styleProps = $("#preview").css("background-size");
+        $("#currentValue").text(styleProps);*/
     });
 
-
+/*
     $('#preview').change(function () {
         var styleProps = $("#preview").css("background-size");
         $("#currentValue").text(styleProps + "px");
-    });
+    });*/
 
-    $('#imageRepeatSize').change(function () {
+/*    $('#imageRepeatSize').change(function () {
         var imageSize = document.getElementById('imageRepeatSize').value;
         $('#preview').css('background-size', imageSize + 'px');
-        var styleProps = $("#preview").css("background-size");
-        $("#currentValue").text(styleProps);
+      /!*  var styleProps = $("#preview").css("background-size");
+        $("#currentValue").text(styleProps);*!/
 
-    });
+    });*/
 
 </script>
